@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
-from core.settings import local
+try:
+    from core.settings import local as setting_file
+except Exception as e:
+    from core.settings import prod as setting_file
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('account/', include("applications.users.apiv1.urls")),
     re_path("game/", include("applications.game.apiv1.urls")),
-] + static(local.MEDIA_URL, document_root = local.MEDIA_ROOT)
+] + static(setting_file.MEDIA_URL, document_root = setting_file.MEDIA_ROOT)

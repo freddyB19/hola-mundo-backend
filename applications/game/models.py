@@ -83,11 +83,11 @@ class ProgresoPlayer(models.Model):
             self.is_winner = True
         return self.is_winner
 
-@receiver(models.signals.post_save, sender = UserProfile)
-def acces_user(sender, instance = None, created=False, **kwargs):
-    if created:
-        ProgresoPlayer.objects.create(
-            user = instance,
-            url = Modulo.objects.get(checkpoint=0).get_absolute_url(),
-            next = Sesion.objects.get(checkpoint=8).get_absolute_url()
-        )
+# @receiver(models.signals.post_save, sender = UserProfile)
+# def acces_user(sender, instance = None, created=False, **kwargs):
+#     if created:
+#         ProgresoPlayer.objects.create(
+#             user = instance,
+#             url = Modulo.objects.get(checkpoint=0).get_absolute_url(),
+#             next = Sesion.objects.get(checkpoint=8).get_absolute_url()
+#         )

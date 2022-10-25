@@ -35,6 +35,7 @@ CORS_ALLOWED_ORIGINS = [
 # Una lista de orígenes confiables para solicitudes no seguras
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8080",
+    "https://app-hola-mundo.onrender.com",
 ]
 
 # Cors Methods

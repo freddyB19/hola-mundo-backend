@@ -30,7 +30,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://app-hola-mundo.vercel.app/"
+    "https://app-hola-mundo.vercel.app"
 ]
 # Una lista de orígenes confiables para solicitudes no seguras
 CSRF_TRUSTED_ORIGINS = [
